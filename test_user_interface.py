@@ -56,7 +56,7 @@ class TestGetUniqueCanNames(unittest.TestCase):
         self.assertEqual(len(list_unique_can_len), 3)
 
     def test_empty_list_of_cans(self):#9
-        """Test taking in an empty list, will return enpty list""" 
+        """Test taking in an empty list, will return empty list""" 
         can_list = []
         list_unique_can_len = user_interface.get_unique_can_names(can_list)
         self.assertEqual(len(list_unique_can_len), 0)
