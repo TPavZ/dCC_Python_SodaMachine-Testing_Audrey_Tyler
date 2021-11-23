@@ -110,18 +110,7 @@ class TestCalculateCoinValue(unittest.TestCase):
     
     def test_calculate_total_value(self):
         """instantiates each of the 4 coin types and appends them to a list and checks that total_value == 0.41"""
-        coin_list = []
-        
-        quarter = coins.Quarter()
-        dime = coins.Dime()
-        nickel = coins.Nickel()
-        penny = coins.Penny()
-        
-        coin_list.append(quarter)
-        coin_list.append(dime)
-        coin_list.append(nickel)
-        coin_list.append(penny)
-        
+        coin_list = [coins.Quarter(), coins.Dime(), coins.Nickel(), coins.Penny()]
         coin_list_value = self.soda_machine.calculate_coin_value(coin_list)
         self.assertEqual(coin_list_value, 0.41)
     
@@ -177,20 +166,8 @@ class TestDepositCoinsIntoRegister(unittest.TestCase):
     
     def test_deposit_coins(self):
         """instantiates each of 4 coins and adds them to register then tests new register length == 92"""
-        coin_list = []
-        
-        quarter = coins.Quarter()
-        dime = coins.Dime()
-        nickel = coins.Nickel()
-        penny = coins.Penny()
-        
-        coin_list.append(quarter)
-        coin_list.append(dime)
-        coin_list.append(nickel)
-        coin_list.append(penny)
-        
+        coin_list = [coins.Quarter(), coins.Dime(), coins.Nickel(), coins.Penny()]
         self.soda_machine.deposit_coins_into_register(coin_list)
-        
         length_register_list = len(self.soda_machine.register)
         self.assertEqual(length_register_list, 92)
         
