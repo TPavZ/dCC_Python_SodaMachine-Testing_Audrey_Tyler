@@ -1,5 +1,4 @@
 #Note: Since user_interface is a module, not a class, these TestCases will not require a setUp method
-
 import unittest
 import user_interface
 import cans
@@ -7,7 +6,6 @@ import coins
 
 class TestValidateMainMenu(unittest.TestCase):
     """Test validate_main_menu"""
-
     def test_input_1_returns_tuple(self): #1
         """test takes input of 1, ensuring the tuple of (True, number) is returned"""
         taken_input_int = user_interface.validate_main_menu(1)
