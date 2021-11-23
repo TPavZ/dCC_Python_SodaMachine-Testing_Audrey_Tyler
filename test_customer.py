@@ -3,7 +3,7 @@ from customer import Customer
 import coins    
 import cans
 
-class Testgetwalletcoin(unittest.TestCase):
+class TestGetWalletCoin(unittest.TestCase):
     """Test get_wallet_coin"""
     def setUp(self):
         self.customer = Customer()
@@ -30,10 +30,10 @@ class Testgetwalletcoin(unittest.TestCase):
     
     def test_get_invalid_coin(self):
         """Passing in an invalid string that will return none"""
-        returned_coin = self.customer.get_wallet_coin("Quarter") or self.customer.get_wallet_coin("Dime") or self.customer.get_wallet_coin("Nickel") or self.customer.get_wallet_coin("Penny")
-        self.assertNotEqual(returned_coin.name, "anything else")
+        returned_coin = self.customer.get_wallet_coin("Peso")
+        self.assertIsNone(returned_coin, None)
 
-class Testaddcoinstowallet(unittest.TestCase):
+class TestAddCoinsToWallet(unittest.TestCase):
     """Test add_coins_to_wallet"""
     def setUp(self):
         self.customer = Customer()
@@ -53,7 +53,7 @@ class Testaddcoinstowallet(unittest.TestCase):
         self.assertEqual(original_wallet, new_wallet)
     
 
-class Testaddcantobackpack(unittest.TestCase):
+class TestAddDanToBackpack(unittest.TestCase):
     """Test add_can_to_backpack"""
     def setUp(self):
         self.customer = Customer()
