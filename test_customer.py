@@ -53,7 +53,7 @@ class TestAddCoinsToWallet(unittest.TestCase):
         self.assertEqual(original_wallet_len, new_wallet_len)
     
 
-class TestAddDanToBackpack(unittest.TestCase):
+class TestAddCanToBackpack(unittest.TestCase):
     """Test add_can_to_backpack"""
     def setUp(self):
         self.customer = Customer()
