@@ -40,17 +40,17 @@ class TestAddCoinsToWallet(unittest.TestCase):
 
     def test_add_coins(self):
         """Test that takes in three items and checks if the wallet list increased by 3"""
-        original_wallet = len(self.customer.wallet.money)
+        original_wallet_len = len(self.customer.wallet.money)
         self.customer.add_coins_to_wallet([coins.Penny(), coins.Penny(), coins.Penny()])
-        new_wallet = len(self.customer.wallet.money)
-        self.assertEqual((original_wallet + 3), new_wallet)
+        new_wallet_len = len(self.customer.wallet.money)
+        self.assertEqual((original_wallet_len + 3), new_wallet_len)
 
     def test_add_nothing(self):
         """Test that takes in nothing and confirms no changes where made to wallet"""
-        original_wallet = len(self.customer.wallet.money)
+        original_wallet_len = len(self.customer.wallet.money)
         self.customer.add_coins_to_wallet([])
-        new_wallet = len(self.customer.wallet.money)
-        self.assertEqual(original_wallet, new_wallet)
+        new_wallet_len = len(self.customer.wallet.money)
+        self.assertEqual(original_wallet_len, new_wallet_len)
     
 
 class TestAddDanToBackpack(unittest.TestCase):
@@ -61,24 +61,24 @@ class TestAddDanToBackpack(unittest.TestCase):
     #Test will repeat for each type of can.
     def test_add_one_cola_to_backpack(self):
         """Test that takes in one soda (Cola) and makes sure the len of the items in backpack increases by one"""
-        original_backpack = len(self.customer.backpack.purchased_cans)
+        original_backpack_len = len(self.customer.backpack.purchased_cans)
         self.customer.add_can_to_backpack(cans.Cola)
-        new_backpack = len(self.customer.backpack.purchased_cans)
-        self.assertEqual(original_backpack + 1, new_backpack)
+        new_backpack_len = len(self.customer.backpack.purchased_cans)
+        self.assertEqual(original_backpack_len + 1, new_backpack_len)
 
     def test_add_one_orangesoda_to_backpack(self):
         """Test that takes in one soda (OrangeSoda) and makes sure the len of the items in backpack increases by one"""
-        original_backpack = len(self.customer.backpack.purchased_cans)
+        original_backpack_len = len(self.customer.backpack.purchased_cans)
         self.customer.add_can_to_backpack(cans.OrangeSoda)
-        new_backpack = len(self.customer.backpack.purchased_cans)
-        self.assertEqual(original_backpack + 1, new_backpack)
+        new_backpack_len = len(self.customer.backpack.purchased_cans)
+        self.assertEqual(original_backpack_len + 1, new_backpack_len)
         
     def test_add_one_rootbeer_to_backpack(self):
         """Test that takes in one soda (RootBeer) and makes sure the len of the items in backpack increases by one"""
-        original_backpack = len(self.customer.backpack.purchased_cans)
+        original_backpack_len = len(self.customer.backpack.purchased_cans)
         self.customer.add_can_to_backpack(cans.RootBeer)
-        new_backpack = len(self.customer.backpack.purchased_cans)
-        self.assertEqual(original_backpack + 1, new_backpack)
+        new_backpack_len = len(self.customer.backpack.purchased_cans)
+        self.assertEqual(original_backpack_len + 1, new_backpack_len)
 
 if __name__ == "__main__":
     unittest.main()
