@@ -31,7 +31,7 @@ class TestGetWalletCoin(unittest.TestCase):
     def test_get_invalid_coin(self):
         """Passing in an invalid string that will return none"""
         returned_coin = self.customer.get_wallet_coin("Peso")
-        self.assertIsNone(returned_coin, None)
+        self.assertIsNone(returned_coin)
 
 class TestAddCoinsToWallet(unittest.TestCase):
     """Test add_coins_to_wallet"""
